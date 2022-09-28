@@ -31,6 +31,18 @@ public class TestFestBugPage extends BasePage {
     @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-79ym8r > div > div > div > div > div:nth-child(2) > div > div > div.sc-fMiknA.kdMXvS > div > div > div > div:nth-child(1) > span > span > span > span")
     private WebElement secondConditionType;
 
+    @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-79ym8r > div > div > div > div > div:nth-child(2) > div > div > div.sc-fMiknA.kdMXvS > div > div")
+    private WebElement conditionFirstDiv;
+
+    @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-79ym8r > div > div > div > div > div:nth-child(2) > div > div > div.sc-fMiknA.kdMXvS > div > div > div > div:nth-child(1) > div > div:nth-child(1) > div")
+    private WebElement condition1;
+
+    @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-79ym8r > div > div > div > div > div:nth-child(2) > div > div > div.sc-fMiknA.kdMXvS > div > div > div > div:nth-child(1) > div > div:nth-child(2) > div")
+    private WebElement condition2;
+
+    @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-79ym8r > div > div > div > div > div:nth-child(2) > div > div > div.sc-fMiknA.kdMXvS > div > div > div > div:nth-child(2) > div > div:nth-child(1)")
+    private WebElement condition3;
+
     public boolean correctConditionsCounters(String counter){
         waitUntilElementLoaded(detailsConditionCounter);
         return detailsConditionCounter.getText().equals(counter)
@@ -52,18 +64,22 @@ public class TestFestBugPage extends BasePage {
         conditionButton.click();
     }
 
-    public boolean showCorrectConditions(String firstCondition, String secondCondition){
-        return firstConditionType.getText().equals(firstCondition)
-                && secondConditionType.getText().equals(secondCondition);
-
-    }
-
     public String firstCondition(){
         return firstConditionType.getText();
     }
 
     public String secondCondition(){
         return secondConditionType.getText();
+    }
+
+    public String correctCondition1(){
+        return condition1.getText();
+    }
+    public String correctCondition2(){
+        return condition2.getText();
+    }
+    public String correctCondition3(){
+        return condition3.getText();
     }
 
 }

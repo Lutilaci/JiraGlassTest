@@ -37,4 +37,15 @@ public class ConditionsTest {
         Assertions.assertEquals(firstCondition, testFestBugPage.firstCondition());
         Assertions.assertEquals(secondCondition,testFestBugPage.secondCondition());
     }
+
+    @Test
+    public void nestedConditionsCorrectlyShow(){
+        String condition1 = "This transition will only execute if code has been committed against this issue.";
+        String condition2 = "All sub-tasks must have one of the following statuses to allow parent issue transitions: IN REVIEW";
+        String condition3 = "Transition will only be available on issues that matches against the given JQL.";
+        testFestBugPage.goToConditions();
+        Assertions.assertEquals(condition1, testFestBugPage.correctCondition1());
+        Assertions.assertEquals(condition2, testFestBugPage.correctCondition2());
+        Assertions.assertEquals(condition3, testFestBugPage.correctCondition3());
+    }
 }
