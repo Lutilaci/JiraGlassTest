@@ -15,6 +15,7 @@ public class ConditionsTest {
         testFestBugPage.logIn();
         testFestBugPage.openUrl("/projects/JIR?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10004/transitions");
         testFestBugPage.skipTutorial();
+        testFestBugPage.goSendToReviewTransition();
     }
 
     @AfterEach
@@ -22,12 +23,18 @@ public class ConditionsTest {
         quitDriver();
     }
 
-
-
     @Test
     public void counterCountSuccessful(){
         String counter = "3";
-        testFestBugPage.goSendToReviewTransition();
         Assertions.assertTrue(testFestBugPage.correctConditionsCounters(counter));
+    }
+
+    @Test
+    public void validatorsCorrectlyShow(){
+        String firstCondition = "ALL";
+        String secondCondition = "ANY";
+        testFestBugPage.goToConditions();
+        Assertions.assertEquals(firstCondition, testFestBugPage.firstCondition());
+        Assertions.assertEquals(secondCondition,testFestBugPage.secondCondition());
     }
 }
