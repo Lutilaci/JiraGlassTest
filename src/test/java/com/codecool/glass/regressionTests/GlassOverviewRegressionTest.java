@@ -48,6 +48,17 @@ public class GlassOverviewRegressionTest {
     }
 
     @Test
+    public void isComponentsCardPresent(){
+        projectGlassPage.isElementPResent(projectGlassPage.componentsCard);
+        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.componentsCard).contains("Components"));
+    }
+
+    @Test
+    public void isVersionsCardPresent(){
+        projectGlassPage.isElementPResent(projectGlassPage.versionsCard);
+        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.versionsCard).contains("Versions"));
+    }
+    @Test
     public void isAccessOverviewCardPresent(){
         projectGlassPage.isElementPResent(projectGlassPage.accessOverviewCard);
         Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.accessOverviewCard).contains("Access Overview"));
