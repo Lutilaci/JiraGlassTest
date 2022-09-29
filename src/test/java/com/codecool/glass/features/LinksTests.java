@@ -73,7 +73,7 @@ public class LinksTests {
         glassPage.overflowMenu.click();
         assertTrue(glassPage.HaveEnableElement("Notifications"));
         glassPage.openUrl(glassPage.glassUrl);
-        glassPage.overflowMenu.click();
+        //glassPage.overflowMenu.click();
         assertTrue(glassPage.HaveEnableElement("Notifications"));
     }
     @Test
