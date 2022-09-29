@@ -5,12 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class GlassPageMatrix extends BasePage {
-    @FindBy(xpath = "//*[@id=\"app-root\"]/div/div/div[3]/div[4]/div/div/div[2]/div/table/tbody/tr[1]") public static WebElement initialRow;
-    @FindBy(xpath = "//*[@id=\"app-root\"]/div/div/div[3]/div[4]/div/div/div[2]/div/table/tbody/tr[2]") public static WebElement reusedRow;
-    @FindBy(xpath = "//*[@id=\"app-root\"]/div/div/div[3]/div[4]/div/div/div[2]/div/table/tbody/tr[4]") public static WebElement globalRow;
-    @FindBy(xpath = "//*[@id=\"app-root\"]/div/div/div[3]/div[4]/div/div/div[2]/div/table/tbody/tr[5]") public static WebElement uniqueRow;
+    @FindBy(xpath = "//strong[contains(text(),'Create')]/parent::span/parent::td/parent::tr") public static WebElement initialRow;
+    @FindBy(xpath = "//strong[contains(text(),'RedPill')]/parent::span/parent::td/parent::tr") public static WebElement reusedRow;
+    @FindBy(xpath = "//strong[contains(text(),'GoOut')]/parent::span/parent::td/parent::tr") public static WebElement globalRow;
+    @FindBy(xpath = "//strong[contains(text(),'Change My Mind')]/parent::span/parent::td/parent::tr") public static WebElement uniqueRow;
     @FindBy(xpath = "//div[@role='tablist']") public static WebElement detailsPostCounter;
-    @FindBy(xpath = "//*[@id=\"app-root\"]/div/div/div[3]/div[4]/div/div/div[2]/div/table/tbody/tr[5]/td[8]/div") public static WebElement uniqueRowPostFunction;
+    @FindBy(xpath = "//strong[contains(text(),'Change My Mind')]/parent::span/parent::td/parent::tr/td[8]") public static WebElement uniqueRowPostFunction;
 
     @FindBy(xpath = "//span[contains(text(),'Post Functions')]//parent::div[@role='tab'] ") public static WebElement postsDetails;
     @FindBy(xpath = "//div[@role='tabpanel']") public static WebElement detailsPostPanel;
@@ -69,7 +69,7 @@ public class GlassPageMatrix extends BasePage {
     }
 
     public boolean IsColumn(String column) {
-        waitUntilElementLoaded(driver.findElement(By.tagName("th")));
+        waitUntilElementLoaded(driver.findElement(By.xpath("//tr")));
         for (WebElement e :driver.findElements(By.xpath("//th")))
             if (e.getText().contains(column))
                 return true;
@@ -78,7 +78,7 @@ public class GlassPageMatrix extends BasePage {
 
     private int CountColumn(String column) {
         int count = 0;
-        waitUntilElementLoaded(driver.findElement(By.tagName("th")));
+        waitUntilElementLoaded(driver.findElement(By.xpath("//tr")));
         for (WebElement e :driver.findElements(By.xpath("//th"))) {
             count++;
             if (e.getText().contains(column))

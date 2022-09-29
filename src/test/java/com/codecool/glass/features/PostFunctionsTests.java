@@ -53,6 +53,4 @@ public class PostFunctionsTests {
 
         assertTrue(glassPage.HasAllPostFunctions(customCounter + defaultCounter));
     }
-
-    //have all links admin...2...3
 }
