@@ -15,6 +15,7 @@ public class ConditionsTest {
         testFestBugPage.logIn();
         testFestBugPage.openUrl("/projects/JIR?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10004/transitions");
         testFestBugPage.skipTutorial();
+        testFestBugPage.goSendToReviewTransition();
     }
 
     @AfterEach
@@ -22,12 +23,29 @@ public class ConditionsTest {
         quitDriver();
     }
 
-
-
     @Test
     public void counterCountSuccessful(){
         String counter = "3";
-        testFestBugPage.goSendToReviewTransition();
         Assertions.assertTrue(testFestBugPage.correctConditionsCounters(counter));
+    }
+
+    @Test
+    public void validatorsCorrectlyShow(){
+        String firstCondition = "ALL";
+        String secondCondition = "ANY";
+        testFestBugPage.goToConditions();
+        Assertions.assertEquals(firstCondition, testFestBugPage.firstCondition());
+        Assertions.assertEquals(secondCondition,testFestBugPage.secondCondition());
+    }
+
+    @Test
+    public void nestedConditionsCorrectlyShow(){
+        String condition1 = "This transition will only execute if code has been committed against this issue.";
+        String condition2 = "All sub-tasks must have one of the following statuses to allow parent issue transitions: IN REVIEW";
+        String condition3 = "Transition will only be available on issues that matches against the given JQL.";
+        testFestBugPage.goToConditions();
+        Assertions.assertEquals(condition1, testFestBugPage.correctCondition1());
+        Assertions.assertEquals(condition2, testFestBugPage.correctCondition2());
+        Assertions.assertEquals(condition3, testFestBugPage.correctCondition3());
     }
 }

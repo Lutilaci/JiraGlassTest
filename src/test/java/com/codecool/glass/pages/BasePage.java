@@ -22,6 +22,7 @@ public abstract class BasePage {
 
     public BasePage(){
         driver = DriverSingleton.getDriver();
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, WAIT_DURATION);
         driver.manage().window().maximize();
@@ -49,5 +50,9 @@ public abstract class BasePage {
     public boolean elementIsPresent(WebElement webElement){
        waitUntilElementLoaded(webElement);
        return webElement.isDisplayed();
+    }
+
+    public String getElementText(WebElement element){
+        return element.getText();
     }
 }
