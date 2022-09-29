@@ -12,6 +12,9 @@ public class ProjectGlassPage extends BasePage{
     @FindBy(css = "#app-root div:nth-of-type(2) .css-d6vpf6:nth-of-type(3) .css-t5emrf") public WebElement peopleButton;
     @FindBy(css = "#app-root .css-d6vpf6:nth-of-type(4) .css-t5emrf") public WebElement permissionsButton;
     @FindBy(css = "#app-root .css-d6vpf6:nth-of-type(5) .css-t5emrf") public WebElement notificationsButton;
+    @FindBy(css = "[class='css-1p25gik'] .css-t5emrf") public WebElement documentationButton;
+    @FindBy(css = "#app-root [class='css-1p5j0a7'] .css-d6vpf6:nth-of-type(2) div") public WebElement sendUsFeedbackButton;
+    @FindBy(css = "#app-root [class='css-1p5j0a7'] .highlight-holder .css-t5emrf") public WebElement exportAsButton;
 
     public boolean isElementPResent(WebElement element){
         return element.isDisplayed();
