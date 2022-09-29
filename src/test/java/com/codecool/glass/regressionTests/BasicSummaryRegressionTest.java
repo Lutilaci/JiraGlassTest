@@ -1,4 +1,4 @@
-package com.codecool.glass.features;
+package com.codecool.glass.regressionTests;
 
 import com.codecool.glass.pages.GlassPageMatrix;
 import com.codecool.glass.pages.ProjectGlassPage;
@@ -14,13 +14,11 @@ public class BasicSummaryRegressionTest {
 
     private static ProjectGlassPage projectGlassPage;
     private static TestFestBugPage testFestBugPage;
-    private static GlassPageMatrix glassPageMatrix;
 
     @BeforeAll
     public static void setUp() {
         projectGlassPage = new ProjectGlassPage();
         testFestBugPage = new TestFestBugPage();
-        glassPageMatrix = new GlassPageMatrix();
         projectGlassPage.logIn();
         projectGlassPage.openUrl("/projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/general/schemes");
         testFestBugPage.skipTutorial();
@@ -34,6 +32,7 @@ public class BasicSummaryRegressionTest {
     @Test
     public void isBasicSummaryPresent(){
         projectGlassPage.isElementPResent(projectGlassPage.basicSummary);
+        Assertions.assertEquals(projectGlassPage.getElementText(projectGlassPage.basicSummary), "Basic Summary");
     }
 
     @Test

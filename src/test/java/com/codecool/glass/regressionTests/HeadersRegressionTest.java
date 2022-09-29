@@ -1,4 +1,4 @@
-package com.codecool.glass.features;
+package com.codecool.glass.regressionTests;
 
 import com.codecool.glass.pages.GlassPageMatrix;
 import com.codecool.glass.pages.ProjectGlassPage;

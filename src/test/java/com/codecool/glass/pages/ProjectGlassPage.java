@@ -22,6 +22,12 @@ public class ProjectGlassPage extends BasePage{
     @FindBy(css = "div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3)") public WebElement categoryCard;
     @FindBy(css = "#app-root div:nth-child(3) .people-colored-border:nth-of-type(4)") public WebElement leadCard;
     @FindBy(css = "#app-root div:nth-child(3) .people-colored-border:nth-of-type(5)") public WebElement defaultAssigneeCard;
+    @FindBy(css = "#app-root > div > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)") public WebElement glassOverview;
+    @FindBy(css = "#app-root div:nth-child(3) .half-fixed-normal-height.workflow-colored-border:nth-of-type(1)") public WebElement lastIssueCreatedCard;
+    @FindBy(css = "#app-root div:nth-child(3) .workflow-colored-border:nth-of-type(2)") public WebElement workflowsCard;
+    @FindBy(css = "#app-root div:nth-of-type(2) div:nth-child(3) .general-colored-border:nth-of-type(3)") public  WebElement componentsCard;
+    @FindBy(css = "#app-root div:nth-child(3) .general-colored-border:nth-of-type(4)") public WebElement versionsCard;
+    @FindBy(css = ".permission-colored-border") public WebElement accessOverviewCard;
 
 
     public boolean isElementPResent(WebElement element){
