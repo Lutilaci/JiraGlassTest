@@ -15,7 +15,7 @@ import java.time.Duration;
 public abstract class BasePage {
     public WebDriver driver;
     public WebDriverWait wait;
-    private final Duration WAIT_DURATION = Duration.ofSeconds(3);
+    private final Duration WAIT_DURATION = Duration.ofSeconds(5);
     private static String BASE_URL = Utils.getEnvironmentVariable("BASE_URL");
     private static String USER_NAME = Utils.getEnvironmentVariable("USER_NAME");
     private static String PASSWORD = Utils.getEnvironmentVariable("PASSWORD");
