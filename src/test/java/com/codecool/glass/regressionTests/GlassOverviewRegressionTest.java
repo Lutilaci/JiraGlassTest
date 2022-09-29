@@ -3,7 +3,6 @@ package com.codecool.glass.regressionTests;
 import com.codecool.glass.pages.ProjectGlassPage;
 import com.codecool.glass.pages.TestFestBugPage;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -29,38 +28,27 @@ public class GlassOverviewRegressionTest {
     }
 
     @Test
-    public void isGlassOverviewPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.glassOverview);
-        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.glassOverview).contains("Glass Overview"));
-        System.out.println(projectGlassPage.getElementText(projectGlassPage.glassOverview));
+    public void isGlassOverviewPresent() {
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.glassOverview, "Glass Overview");
     }
 
     @Test
     public void isLastIssueCreatedCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.lastIssueCreatedCard);
-        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.lastIssueCreatedCard).contains("Last issue created"));
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.lastIssueCreatedCard, "Last issue created");}
 
     @Test
     public void isWorkflowsCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.workflowsCard);
-        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.workflowsCard).contains("Workflows"));
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.workflowsCard, "Workflows");}
 
     @Test
     public void isComponentsCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.componentsCard);
-        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.componentsCard).contains("Components"));
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.componentsCard, "Components");}
 
     @Test
     public void isVersionsCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.versionsCard);
-        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.versionsCard).contains("Versions"));
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.versionsCard, "Versions");}
+
     @Test
     public void isAccessOverviewCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.accessOverviewCard);
-        Assertions.assertTrue(projectGlassPage.getElementText(projectGlassPage.accessOverviewCard).contains("Access Overview"));
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.accessOverviewCard, "Access Overview");}
 }

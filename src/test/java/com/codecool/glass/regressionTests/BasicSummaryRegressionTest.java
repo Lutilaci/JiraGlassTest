@@ -1,10 +1,8 @@
 package com.codecool.glass.regressionTests;
 
-import com.codecool.glass.pages.GlassPageMatrix;
 import com.codecool.glass.pages.ProjectGlassPage;
 import com.codecool.glass.pages.TestFestBugPage;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -31,42 +29,32 @@ public class BasicSummaryRegressionTest {
 
     @Test
     public void isBasicSummaryPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.basicSummary);
-        Assertions.assertEquals(projectGlassPage.getElementText(projectGlassPage.basicSummary), "Basic Summary");
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.basicSummary, "Basic Summary");}
 
     @Test
     public void isBasicSummaryProjectCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.basicSummaryProjectCard);
-        Assertions.assertEquals(projectGlassPage.getElementText(projectGlassPage.projectCardTitle), "Neo's choice");
-    }
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.basicSummaryProjectCard, "Neo's choice");}
 
     @Test
     public void isKeyCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.keyCard);
-        String keyCardText = projectGlassPage.keyCard.getText();
-        Assertions.assertTrue(keyCardText.contains("Key"));
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.keyCard, "Key");
 //        Assertions.assertTrue(keyCardText.contains("NC"));
     }
 
     @Test
     public void isCategoryCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.categoryCard);
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.categoryCard, "Category");
     }
 
     @Test
     public void isLeadCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.leadCard);
-        String leadCardText = projectGlassPage.leadCard.getText();
-        Assertions.assertTrue(leadCardText.contains("Lead"));
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.leadCard, "Lead");
 //        Assertions.assertTrue(leadCardText.contains("Codecool Admin"));
     }
 
     @Test
     public void defaultAssigneeCardPresent(){
-        projectGlassPage.isElementPResent(projectGlassPage.defaultAssigneeCard);
-        String defaultAssigneeCardText = projectGlassPage.defaultAssigneeCard.getText();
-        Assertions.assertTrue(defaultAssigneeCardText.contains("Default assignee"));
-//        Assertions.assertTrue(leadCardText.contains("unassigned"));
+        projectGlassPage.isElementPresentAndContainWord(projectGlassPage.defaultAssigneeCard, "Default assignee");
+//        Assertions.assertTrue(d.contains("unassigned"));
     }
 }

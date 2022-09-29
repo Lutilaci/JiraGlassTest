@@ -1,5 +1,6 @@
 package com.codecool.glass.pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -28,10 +29,15 @@ public class ProjectGlassPage extends BasePage{
     @FindBy(css = "#app-root div:nth-of-type(2) div:nth-child(3) .general-colored-border:nth-of-type(3)") public  WebElement componentsCard;
     @FindBy(css = "#app-root div:nth-child(3) .general-colored-border:nth-of-type(4)") public WebElement versionsCard;
     @FindBy(css = ".permission-colored-border") public WebElement accessOverviewCard;
+    @FindBy(css = "#app-root div:nth-of-type(3) div:nth-child(3) h3") public WebElement schemes;
+    @FindBy(css = "#app-root div:nth-of-type(3) .css-orz1ns button") public WebElement schemesButton;
+    @FindBy(css = "#app-root div:nth-of-type(3) .css-d6vpf6:nth-of-type(2) button") public WebElement componentsButton;
+    @FindBy(css = "#app-root div:nth-of-type(3) .css-d6vpf6:nth-of-type(3) button") public WebElement versionsButton;
 
 
-    public boolean isElementPResent(WebElement element){
-        return element.isDisplayed();
+    public void isElementPresentAndContainWord(WebElement element, String text){
+        element.isDisplayed();
+        Assertions.assertTrue(getElementText(element).contains(text));
     }
 
 
