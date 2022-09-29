@@ -14,13 +14,14 @@ public class GlassPageMatrix extends BasePage {
 
     @FindBy(xpath = "//span[contains(text(),'Post Functions')]//parent::div[@role='tab'] ") public static WebElement postsDetails;
     @FindBy(xpath = "//div[@role='tabpanel']") public static WebElement detailsPostPanel;
-    //@FindBy(xpath = "//thead") public static WebElement transitionHeader;List
+    @FindBy(xpath = "//button[@data-testid='overflow-menu-trigger']") public static WebElement overflowMenu;
 
     @FindBy(className = "css-1oc7v0j") private WebElement tutorialModal;
     @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-1oc7v0j > div > div > div > div > div:nth-child(2) > button")
     private WebElement tutorialSkipButton;
 
-    public String glassUrl = "projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10000/transitions";
+    public String glassEpicUrl = "projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10000/transitions";
+    public String glassUrl = "projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/general/schemes";
 
     public void skipTutorial(){
         waitUntilElementLoaded(tutorialModal);
@@ -29,6 +30,12 @@ public class GlassPageMatrix extends BasePage {
     public boolean HaveElement(WebElement element, String type) {
         waitUntilElementLoaded(element);
         return element.getText().contains(type);
+    }
+    public boolean HaveEnableElement( String name) {
+        String path = "//*[contains(text(),'"+ name+"')]";
+        waitUntilElementLoaded(driver.findElement(By.xpath(path)));
+        WebElement element = driver.findElement(By.xpath(path));
+        return element.isDisplayed() && element.isEnabled();
     }
 
     public boolean IsMainPostCounter(int def, int custom){
