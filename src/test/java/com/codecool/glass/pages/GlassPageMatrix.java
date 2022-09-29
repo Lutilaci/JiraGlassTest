@@ -20,7 +20,7 @@ public class GlassPageMatrix extends BasePage {
     @FindBy(css = "#jira > div.atlaskit-portal-container > div:nth-child(2) > div > div:nth-child(3) > div.css-1oc7v0j > div > div > div > div > div:nth-child(2) > button")
     private WebElement tutorialSkipButton;
 
-    public String glassUrl = "projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10000/transitions";
+    public String glassUrl = "/projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10000/transitions";
 
     public void skipTutorial(){
         waitUntilElementLoaded(tutorialModal);
