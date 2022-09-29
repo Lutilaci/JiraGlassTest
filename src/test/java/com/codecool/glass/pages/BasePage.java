@@ -51,4 +51,8 @@ public abstract class BasePage {
        waitUntilElementLoaded(webElement);
        return webElement.isDisplayed();
     }
+
+    public String getElementText(WebElement element){
+        return element.getText();
+    }
 }
