@@ -48,18 +48,18 @@ public class HeadersRegressionTest {
     public void checkHeaderPeopleButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.peopleButton, "People");}
 
     @Test
-    public void checkHeaderPermissionsButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.generalButton, "Permissions");}
+    public void checkHeaderPermissionsButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.permissionsButton, "Permissions");}
 
     @Test
-    public void checkHeaderNotificationsButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.generalButton, "Notifications");}
+    public void checkHeaderNotificationsButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.notificationsButton, "Notifications");}
 
     @Test
-    public void checkHeaderDocumentationButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.generalButton, "Documentation");}
+    public void checkHeaderDocumentationButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.documentationButton, "Documentation");}
 
     @Test
-    public void checkHeaderSendUsFeedbackButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.generalButton, "Send us feedback");}
+    public void checkHeaderSendUsFeedbackButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.sendUsFeedbackButton, "Send us feedback");}
 
     @Test
-    public void checkHeaderExportAsButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.generalButton, "Export as");}
+    public void checkHeaderExportAsButtonExist(){glassPageMatrix.HaveElement(projectGlassPage.exportAsButton, "Export as");}
 
 }
