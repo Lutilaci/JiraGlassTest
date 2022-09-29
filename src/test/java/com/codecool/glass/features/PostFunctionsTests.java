@@ -16,12 +16,12 @@ public class PostFunctionsTests {
     public void setUp() {
         glassPage = new GlassPageMatrix();
         glassPage.logIn();
-        glassPage.openUrl(glassPage.glassUrl);
+        glassPage.openUrl(glassPage.glassEpicUrl);
         glassPage.skipTutorial();
     }
     @AfterEach
     public void GoToStart() {
-        glassPage.openUrl(glassPage.glassUrl);
+        glassPage.openUrl(glassPage.glassEpicUrl);
     }
     @AfterAll
     public void tearDown(){

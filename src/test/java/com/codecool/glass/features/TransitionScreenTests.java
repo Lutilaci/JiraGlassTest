@@ -17,7 +17,7 @@ public class TransitionScreenTests {
     public void setUp() {
         glassPage = new GlassPageMatrix();
         glassPage.logIn();
-        glassPage.openUrl(glassPage.glassUrl);
+        glassPage.openUrl(glassPage.glassEpicUrl);
         glassPage.skipTutorial();
     }
     @AfterAll

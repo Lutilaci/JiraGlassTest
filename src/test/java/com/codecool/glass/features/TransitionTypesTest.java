@@ -14,7 +14,7 @@ public class TransitionTypesTest {
     public void setUp() {
         glassPage = new GlassPageMatrix();
         glassPage.logIn();
-        glassPage.openUrl("/projects/NC?selectedItem=com.metainf.jira.plugin:glass-project-documentation#/home/issueTypes/10000/transitions");
+        glassPage.openUrl(glassPage.glassEpicUrl);
         glassPage.skipTutorial();
     }
 
